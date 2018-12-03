@@ -12,7 +12,7 @@ P2P_PORT = 9901
 ADDRESS_VERSION = 50
 RPC_PORT = 9902
 RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
-            'bitcoin' in (yield bitcoind.rpc_help())
+            'peercoin' in (yield bitcoind.rpc_help())
         ))
 SUBSIDY_FUNC = lambda height: 50*100000000 >> (height + 1)//210000
 POW_FUNC = data.hash256
